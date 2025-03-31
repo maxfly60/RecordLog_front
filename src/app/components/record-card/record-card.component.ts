@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Record } from '../../models/record';
 import { ArtistService } from '../../services/artist.service';
-ArtistService
+
 
 
 @Component({

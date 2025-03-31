@@ -15,10 +15,10 @@ export class RecordService {
       date: '1973-03-01',
       genre: 'Rock progressif',
       label: 'Harvest Records',
-      songsList: undefined,
+      songsList: "",
       coverLink:
         'https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe',
-      spotifyLink: "2noRn2Aes5aoNVsU6iWThc",
+      spotifyLink: "4LH4d3cOWNNsVw41Gqt2kv",
     },
     {
       id: 2,
@@ -28,10 +28,10 @@ export class RecordService {
       date: '2001-03-12',
       genre: 'Disco House',
       label: 'Daft Life',
-      songsList: undefined,
+      songsList: "",
       coverLink:
         'https://i.scdn.co/image/ab67616d0000b2732c25dad9f8fd54652f7ba5df',
-      spotifyLink: "4LH4d3cOWNNsVw41Gqt2kv",
+      spotifyLink: "2noRn2Aes5aoNVsU6iWThc",
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ export class RecordService {
       date: '2001-03-12',
       genre: 'House',
       label: 'Daft Life',
-      songsList: undefined,
+      songsList: "",
       coverLink:
         'https://i.scdn.co/image/ab67616d0000b2738ac778cc7d88779f74d33311',
       spotifyLink: "5uRdvUR7xCnHmUW8n64n9y",

@@ -1,14 +1,14 @@
 export class Record {
-  id?: number;
-  title?: string;
+  id: number;
+  title: string;
   artistID: number;
-  format?: string;
-  date?: string;
-  genre?: string;
-  label?: string;
-  songsList?: string;
-  coverLink?: string;
-  spotifyLink?: string;
+  format: string;
+  date: string;
+  genre: string;
+  label: string;
+  songsList: string;
+  coverLink: string;
+  spotifyLink: string;
 
   constructor(id: number, title: string, artistID: number, format: string, date: string,
     genre: string, label: string, songsList: string, coverLink: string, spotifyLink: string) {

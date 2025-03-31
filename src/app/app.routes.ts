@@ -13,6 +13,7 @@ import { AllRecordsPageComponent } from './components/pages/all-records-page/all
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'records', component: AllRecordsPageComponent },
+  { path: 'records/:id', component: RecordPageComponent },
   { path: 'artists', component: AllArtistsPageComponent },
   { path: '**', redirectTo: 'home' },
 ];

@@ -1,1 +1,58 @@
-<p>record-page works!</p>
+<div *ngIf="record" class="p-8 max-w-6xl mx-auto">
+    <!-- Titre + artiste -->
+    <div class="text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+        {{ artistName }} – <span class="italic">{{ record.title }}</span>
+      </h1>
+      <!-- <p class="text-lg text-gray-900 mt-2">
+        Un album qu'il est bien.
+      </p> -->
+    </div>
+  
+    <!-- Contenu principal : Image + détails -->
+    <div class="border-2 rounded-lg w-3/5 py-6 my-12 mx-auto flex flex-col md:flex-row gap-10 items-center justify-center ">
+      <!-- Pochette -->
+      <img
+        [src]="record.coverLink"
+        [alt]="record.title"
+        class="w-64 h-64 object-cover rounded shadow-lg transition hover:scale-105"
+      />
+  
+      <!-- Détails -->
+      <div class="text-left space-y-4 max-w-md">
+        <p class="text-md text-gray-700">
+          Date de sortie : <strong>{{ record.date }}</strong>
+        </p>
+        <p class="text-md text-gray-700">
+            Genre : <strong>{{ record.genre }}</strong>
+          </p>
+  
+        <p class="text-md text-gray-700 ">
+          Label :<strong> {{ record.label }}</strong>
+        </p>
+        <p class="text-md text-gray-700 ">
+          Format : <strong>{{ record.format }}</strong>
+        </p>
+        <p *ngIf="record.spotifyLink" class="text-md text-green-600">
+          Disponible sur Spotify 🎵
+        </p>
+      </div>
+    </div>
+  
+    <!-- Embed de Spotify -->
+    <div *ngIf="record.spotifyLink" class="w-full">
+      <iframe
+        class="rounded-xl shadow-md"
+        [src]="spotifyEmbedUrl"
+        width="100%"
+        height="400"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+  
+  <div *ngIf="!record" class="p-6 text-red-500 text-center text-xl">Record not found.</div>
+  
