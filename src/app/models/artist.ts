@@ -1,10 +1,10 @@
 export class Artist {
-    id?: number;
+    id: number;
     name: string;
-    realNames: number;
+    realNames: string;
     pictureLink: string;
   
-    constructor(id: number, name: string, realNames: number, pictureLink: string) {
+    constructor(id: number, name: string, realNames: string, pictureLink: string) {
       this.id = id;
       this.name = name;
       this.realNames = realNames;
