@@ -15,5 +15,6 @@ export const routes: Routes = [
   { path: 'records', component: AllRecordsPageComponent },
   { path: 'records/:id', component: RecordPageComponent },
   { path: 'artists', component: AllArtistsPageComponent },
+  { path: 'artists/:id', component: ArtistPageComponent },
   { path: '**', redirectTo: 'home' },
 ];

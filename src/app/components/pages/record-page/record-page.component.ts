@@ -26,8 +26,9 @@ export class RecordPageComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.record = this.recordService.getRecords().find((r) => r.id === id);
-
+    // this.record = this.recordService.getRecords().find((r) => r.id === id);
+    this.record = this.recordService.getRecordById(id);
+    
     if (this.record?.spotifyLink) {
       const url = `https://open.spotify.com/embed/album/${this.record.spotifyLink}?utm_source=generator&theme=0`;
       this.spotifyEmbedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);

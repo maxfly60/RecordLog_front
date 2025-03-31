@@ -5,8 +5,8 @@ import { Record } from '../models/record';
   providedIn: 'root',
 })
 export class RecordService {
-  private records: Record[] = [];
-  private mockrecords: Record[] = [
+  // private records: Record[] = [];
+  private records: Record[] = [
     {
       id: 1,
       title: 'The Dark Side of the Moon',
@@ -47,9 +47,17 @@ export class RecordService {
       spotifyLink: "5uRdvUR7xCnHmUW8n64n9y",
     },
   ];
-  constructor() {}
+  constructor() { }
 
   getRecords(): Record[] {
-    return this.mockrecords;
+    return this.records;
+  }
+
+  getRecordById(id: number): Record | undefined {
+    return this.records.find(record => record.id === id);
+  }
+
+  getRecordByArtistId(artistId: number) : Record[] {
+    return this.records.filter(record => record.artistID === artistId)
   }
 }

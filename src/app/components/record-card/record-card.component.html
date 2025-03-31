@@ -1,15 +1,10 @@
-<div class="w-[300px] h-[300px] bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 flex flex-col">
-    <img
-      class="w-full h-[200px] object-cover rounded-t-lg"
-      [src]="record.coverLink"
-      [alt]="record.title"
-    />
+<div class="w-[300px] h-[300px] bg-gray-800 border border-gray-700 rounded-lg shadow-sm flex flex-col">
+    <img class="w-full h-[200px] object-cover rounded-t-lg" [src]="record.coverLink" [alt]="record.title" />
     <div class="p-3 flex flex-col justify-between flex-grow">
-      <div class="flex flex-col gap-1">
-        <h5 class="text-md font-semibold text-gray-900 dark:text-white line-clamp-1">{{ record.title }}</h5>
-        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-1">{{ artistName }}</p>
-        <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-widest line-clamp-1">{{ record.genre }}</p>
-      </div>
+        <div class="flex flex-col gap-1">
+            <p class="text-md font-semibold text-gray-900 dark:text-white line-clamp-1">{{ record.title }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-1">{{ artistName }}</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-widest line-clamp-1">{{ record.genre }}</p>
+        </div>
     </div>
-  </div>
-  
+</div>

@@ -1,12 +1,12 @@
 <div class="m-3 flex flex-col gap-8 w-full">
-  <div class="flex items-center justify-center my-3 w-full">
-    <div class="text-7xl font-bold">All Records</div>
-  </div>
-  <div class="flex gap-8 flex-wrap justify-center">
-    <div *ngFor="let record of getRecords(); let i = index" class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]" [ngStyle]="{ 'animation-delay': (i * 100) + 'ms' }">
-      <a [routerLink]="['/records', record.id]" class="transform transition duration-300 hover:scale-105 hover:shadow-lg block" >
-        <app-record-card [record]="record"></app-record-card>
-      </a>
+    <div class="flex items-center justify-center my-3 w-full">
+        <div class="text-7xl font-boldonse">All Records.</div>
     </div>
-  </div>
+    <div class="flex gap-8 flex-wrap justify-center">
+        <div *ngFor="let record of getRecords(); let i = index" class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]" [ngStyle]="{ 'animation-delay': (i * 100) + 'ms' }">
+            <a [routerLink]="['/records', record.id]" class="transform transition duration-300 hover:scale-105 hover:shadow-lg block">
+                <app-record-card [record]="record"></app-record-card>
+            </a>
+        </div>
+    </div>
 </div>

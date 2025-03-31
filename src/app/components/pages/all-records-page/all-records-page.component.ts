@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RecordCardComponent } from '../../record-card/record-card.component';
 import { RecordService } from '../../../services/record.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgStyle } from '@angular/common';
 import { Record } from '../../../models/record';
 import { RouterLink } from '@angular/router';
-import { NgStyle } from '@angular/common';
+
 
 @Component({
   selector: 'app-all-records-page',

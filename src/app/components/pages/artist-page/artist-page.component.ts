@@ -1,12 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Artist } from '../../../models/artist';
+import { ArtistService } from '../../../services/artist.service';
+import { Record } from '../../../models/record';
+import { RecordService } from '../../../services/record.service';
+import { NgIf, NgFor, NgStyle } from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { RecordCardComponent } from '../../record-card/record-card.component';
+
+
 
 @Component({
-  selector: 'app-artist-page',
-  standalone: true,
-  imports: [],
-  templateUrl: './artist-page.component.html',
-  styleUrl: './artist-page.component.css'
+	selector: 'app-artist-page',
+	standalone: true,
+	imports: [NgIf, NgFor, NgStyle, RecordCardComponent, RouterLink],
+	templateUrl: './artist-page.component.html',
+	styleUrl: './artist-page.component.css'
 })
-export class ArtistPageComponent {
+export class ArtistPageComponent implements OnInit {
+	@Input() artist?: Artist;
 
+	constructor(
+		private route: ActivatedRoute,
+		private artistService: ArtistService,
+		private recordService: RecordService
+	) { }
+
+	ngOnInit(): void {
+		const id = Number(this.route.snapshot.paramMap.get('id'));
+		this.artist = this.artistService.getArtistById(id);
+	}
+
+	getRecordByArtistId(artistId : number) {
+		return this.recordService.getRecordByArtistId(artistId);
+	}
 }
