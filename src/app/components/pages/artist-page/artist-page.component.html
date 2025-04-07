@@ -6,7 +6,7 @@
     </div>
 
     <div class="flex mt-6 gap-8 flex-wrap justify-center">
-        <div *ngFor="let record of getRecordByArtistId(artist.id); let i = index" class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]" [ngStyle]="{ 'animation-delay': (i * 100) + 'ms' }">
+        <div *ngFor="let record of getRecordByartist_id(artist.id); let i = index" class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]" [ngStyle]="{ 'animation-delay': (i * 100) + 'ms' }">
             <a [routerLink]="['/records', record.id]" class="transform transition duration-300 hover:scale-105 hover:shadow-lg block">
                 <app-record-card [record]="record"></app-record-card>
             </a>

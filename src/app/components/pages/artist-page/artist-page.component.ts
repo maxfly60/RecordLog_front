@@ -31,7 +31,7 @@ export class ArtistPageComponent implements OnInit {
 		this.artist = this.artistService.getArtistById(id);
 	}
 
-	getRecordByArtistId(artistId : number) {
-		return this.recordService.getRecordByArtistId(artistId);
+	getRecordByartist_id(artist_id : number) {
+		return this.recordService.getRecordByartist_id(artist_id);
 	}
 }

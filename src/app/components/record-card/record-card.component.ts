@@ -19,8 +19,8 @@ export class RecordCardComponent implements OnInit{
   constructor(private artistService: ArtistService) {}
 
   ngOnInit(): void {
-    if (this.record.artistID !== undefined) {
-      const artist = this.artistService.getArtistById(this.record.artistID);
+    if (this.record.artist_id !== undefined) {
+      const artist = this.artistService.getArtistById(this.record.artist_id);
       this.artistName = artist ? artist.name : 'Unknown Artist';
     }
   }
