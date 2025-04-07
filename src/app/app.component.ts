@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',

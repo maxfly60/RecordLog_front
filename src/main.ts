@@ -15,6 +15,7 @@ const authProviders = AuthModule.forRoot({
     silentRenew: true,
     useRefreshToken: true,
     logLevel: LogLevel.Debug,
+    secureRoutes:["/artists/add"]
   }
 }).providers ?? []; // ← si undefined, ça devient []
 

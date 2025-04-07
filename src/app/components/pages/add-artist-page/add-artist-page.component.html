@@ -1,1 +1,62 @@
-<p>add-artist-page works!</p>
+<div class="p-8 max-w-7xl mx-auto">
+    <!-- Titre -->
+    <div class="text-center mb-6">
+        <p class="text-4xl font-boldonse text-blue-main">
+            Add an artist.
+        </p>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="border-2 border-blue-main bg-gray-50 rounded-lg py-6 my-12 mx-auto w-full max-w-xl">
+        <form (ngSubmit)="onSubmit()" #artistForm="ngForm" class="space-y-6">
+            <!-- Nom de l'artiste -->
+            <div class="flex flex-col">
+                <label for="artistName" class="text-md text-gray-700">Nom de l'artiste</label>
+                <input
+                    id="artistName"
+                    name="artistName"
+                    type="text"
+                    [(ngModel)]="artist.name"
+                    class="mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                />
+            </div>
+
+            <!-- Nom réel -->
+            <div class="flex flex-col">
+                <label for="realName" class="text-md text-gray-700">Nom réel</label>
+                <input
+                    id="realName"
+                    name="realName"
+                    type="text"
+                    [(ngModel)]="artist.realName"
+                    class="mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                />
+            </div>
+
+            <!-- URL de l'image -->
+            <div class="flex flex-col">
+                <label for="imageUrl" class="text-md text-gray-700">URL de l'image</label>
+                <input
+                    id="imageUrl"
+                    name="imageUrl"
+                    type="url"
+                    [(ngModel)]="artist.imageUrl"
+                    class="mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                />
+            </div>
+
+            <!-- Bouton de soumission -->
+            <div class="flex justify-center">
+                <button
+                    type="submit"
+                    class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                >
+                    Ajouter l'artiste
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
