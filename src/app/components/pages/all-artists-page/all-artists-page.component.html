@@ -1,6 +1,6 @@
 <div class="m-3 flex flex-col gap-8 w-full">
     <div class="flex items-center justify-center my-3 w-full">
-        <div class="text-7xl font-boldonse">All Artists.</div>
+        <div class="text-7xl font-boldonse text-blue-main">All Artists.</div>
     </div>
     <div class="flex gap-8 flex-wrap justify-center">
         <div *ngFor="let artist of getArtists(); let i = index" class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]" [ngStyle]="{ 'animation-delay': (i * 100) + 'ms' }">

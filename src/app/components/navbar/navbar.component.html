@@ -1,30 +1,45 @@
-<div class="border-r flex flex-col justify-between border-gray-200 h-full">
+<div class="border-r flex flex-col justify-between bg-blue-main border-blue-border h-full">
     <div>
-        <div class="p-3 border-b font-boldonse border-gray-200">
-            RecordLog.
+      <div class="p-3 border-b  bg-blue-border font-boldonse text-2xl text-blue-bg border-blue-border text-center">RecordLog.</div>
+      <div class="m-3 flex flex-col gap-3">
+        <div class="hover:bg-blue-border text-gray-50 rounded cursor-pointer p-3" [routerLink]="['home']" routerLinkActive="bg-blue-main-hover">
+          Home
         </div>
-        <div class="m-3 flex flex-col gap-3">
-            <div class="hover:bg-gray-100 rounded cursor-pointer p-3" [routerLink]="['home']" routerLinkActive="bg-gray-200">
-                Home
-            </div>
-            <div class="hover:bg-gray-100 rounded cursor-pointer p-3" [routerLink]="['artists']" routerLinkActive="bg-gray-200">
-                Artists
-            </div>
-            <div class="hover:bg-gray-100 rounded cursor-pointer p-3" [routerLink]="['records']" routerLinkActive="bg-gray-200">
-                Records
-            </div>
+        <div class="hover:bg-blue-border text-gray-50 rounded cursor-pointer p-3" [routerLink]="['artists']" routerLinkActive="bg-blue-main-hover">
+          Artists
         </div>
+        <div class="hover:bg-blue-border text-gray-50 rounded cursor-pointer p-3" [routerLink]="['records']" routerLinkActive="bg-blue-main-hover">
+          Records
+        </div>
+      </div>
     </div>
-    
-    <div class="p-3 text-xs flex items-center gap-3" (click)="apiState = !apiState">
-		<div>Etat de l'API :</div>
-		<div class="px-1 py-0.5 rounded bg-green-100
-		text-green-600 border border-green-600" *ngIf="apiState">
-			En Ligne
-		</div>
-		<div class="px-1 py-0.5 rounded bg-red-100
-		text-red-600 border border-red-600" *ngIf="!apiState">
-			Hors-Ligne
-		</div>
-	</div> 
-</div>
+  
+    <div class="flex flex-col">
+      <!-- Statut API -->
+      <div class="p-3 text-xs flex items-center gap-3 cursor-pointer" (click)="apiState = !apiState">
+        <div class="text-gray-50">Etat de la connexion :</div>
+        <div class="px-1 py-0.5 rounded bg-green-bg text-gray-50 border border-gray-50" *ngIf="apiState">
+          En Ligne
+        </div>
+        <div class="px-1 py-0.5 rounded bg-red-bg text-gray-50 border border-gray-50" *ngIf="!apiState">
+          Hors-Ligne
+        </div>
+      </div>
+  
+      <!-- Infos utilisateur -->
+      <div class="p-3 border-t border-blue-border flex flex-col items-start text-sm gap-2">
+        <!-- Si connecté -->
+        <div *ngIf="getIsAuthenticated()" class="flex flex-col gap-2">
+          <div class="text-gray-50">Connecté en tant que :</div>
+          <div class="text-gray-50 font-semibold">{{ getUserName() }}</div>
+          <div (click)="logout()" class="mt-2 text-center py-1.5 rounded bg-blue-main-hover text-white text-sm hover:bg-red-bg transition cursor-pointer">Se déconnecter</div>
+        </div>
+  
+        <!-- Si non connecté -->
+        <div *ngIf="!getIsAuthenticated()">
+          <div (click)="login()" class="px-4 text-center py-1.5 rounded bg-blue-main-hover hover:bg-blue-border text-gray-50 transition cursor-pointer">Se connecter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

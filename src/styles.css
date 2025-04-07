@@ -6,6 +6,20 @@
 @theme {
     --font-roboto: "Roboto", sans-serif;
     --font-boldonse: "Boldonse", sans-serif;
+
+    --color-blue-bg: #e5f3fa;
+    --color-blue-main: #4b6a6b;
+    --color-blue-main-hover: #324747;
+    --color-blue-hover: #91cccf;
+    --color-blue-border: #1f2b2b;
+    --color-gray-bg: #969696;
+    --color-gray-text: #f0f0f0;
+
+    --color-green-bg: #589976;
+    --color-green-alt: #93ffc5;
+    --color-red-bg: #c76066;
+    
+
 }
 
 @keyframes fadeInUp {

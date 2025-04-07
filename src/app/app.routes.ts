@@ -4,17 +4,15 @@ import { ArtistPageComponent } from './components/pages/artist-page/artist-page.
 import { RecordPageComponent } from './components/pages/record-page/record-page.component';
 import { AllArtistsPageComponent } from './components/pages/all-artists-page/all-artists-page.component';
 import { AllRecordsPageComponent } from './components/pages/all-records-page/all-records-page.component';
-
-
-
-
+import { AddArtistPageComponent } from './components/pages/add-artist-page/add-artist-page.component';
 
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home',  component: HomeComponent },
   { path: 'records', component: AllRecordsPageComponent },
   { path: 'records/:id', component: RecordPageComponent },
-  { path: 'artists', component: AllArtistsPageComponent },
-  { path: 'artists/:id', component: ArtistPageComponent },
+  { path: 'artists',  component: AllArtistsPageComponent },
+  { path: 'artists/add',  component: AddArtistPageComponent },
+  { path: 'artists/:id',  component: ArtistPageComponent },
   { path: '**', redirectTo: 'home' },
 ];
