@@ -1,26 +1,28 @@
+import { Artist } from "./artist";
+
 export class Record {
   id: number;
   title: string;
-  artist_id: number;
+  artist: Artist;
   format: string;
   date: string;
   genre: string;
   label: string;
-  songs_list: string;
+  songsList: string;
   coverLink: string;
-  spotify_link: string;
+  spotifyLink: string;
 
-  constructor(id: number, title: string, artist_id: number, format: string, date: string,
-    genre: string, label: string, songs_list: string, coverLink: string, spotify_link: string) {
+  constructor(id: number, title: string, artist: Artist, format: string, date: string,
+    genre: string, label: string, songsList: string, coverLink: string, spotifyLink: string) {
     this.id = id;
     this.title = title;
-    this.artist_id = artist_id;
+    this.artist = artist;
     this.format = format;
     this.date = date;
     this.genre = genre;
     this.label = label;
-    this.songs_list = songs_list;
+    this.songsList = songsList;
     this.coverLink = coverLink;
-    this.spotify_link = spotify_link;
+    this.spotifyLink = spotifyLink;
   }
 }

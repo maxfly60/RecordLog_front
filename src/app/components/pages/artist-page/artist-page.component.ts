@@ -19,6 +19,7 @@ import { RecordCardComponent } from '../../record-card/record-card.component';
 })
 export class ArtistPageComponent implements OnInit {
 	@Input() artist?: Artist;
+	@Input() allRecords?: Record[];
 
 	constructor(
 		private route: ActivatedRoute,
@@ -27,11 +28,14 @@ export class ArtistPageComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
+		
 		const id = Number(this.route.snapshot.paramMap.get('id'));
-		this.artist = this.artistService.getArtistById(id);
-	}
+		this.artistService.getArtistById(id).then((artist : any) => {
+			this.artist= artist;
 
-	getRecordByartist_id(artist_id : number) {
-		return this.recordService.getRecordByartist_id(artist_id);
-	}
+			this.recordService.getRecordsByArtistId(artist.id).then((records : any) => {
+				this.allRecords = records;
+			});
+		});
+	}	
 }

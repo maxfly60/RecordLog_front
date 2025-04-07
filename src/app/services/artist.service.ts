@@ -1,32 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Artist } from '../models/artist';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ArtistService {
-  // private artists: Artist[] = [];
-  private artists: Artist[] = [
-    {
-      id: 1,
-      name: 'Pink Floyd',
-      real_names: "les mecs de pink floyd",
-      picture_link: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQVMXyCMIc2DDq3qZAKBSRBv-5370_AZsoG0shw6ZzbIk1WVEUJGg87mlSGXTfPQ3SPjJBshBHut1ef05tdUwJd2A',
-    },
-    {
-      id: 2,
-      name: 'Daft Punk',
-      real_names: "Thomas & Guy-Man",
-      picture_link: 'https://handsupelectro.fr/wp-content/uploads/2021/03/image-1-1024x655.jpg',
-    },
-  ];
-  constructor() {}
+  private artists: Artist[] = [];
+
+  constructor(private api: ApiService) {
+    this.refreshArtists();
+  }
+
+  refreshArtists(): void {
+    this.api.getArtists().then((artists: any) => (this.artists = artists));
+  }
 
   getArtists(): Artist[] {
     return this.artists;
   }
-  getArtistById(id: number): Artist | undefined {
-    return this.artists.find(artist => artist.id === id);
+
+  getArtistById(id: number): Promise<Artist> {
+    return this.api.getArtistById(id);
   }
-  
 }
