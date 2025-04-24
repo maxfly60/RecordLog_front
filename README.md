@@ -1,4 +1,5 @@
-# RecordLog
+![image](https://github.com/user-attachments/assets/a109b415-ee01-4a48-8bbd-f599c27ba14b)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
 
